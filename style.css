@@ -81,3 +81,76 @@ main{
     color: white;
     font-size: 1rem;
 }
+.btn-add:hover,
+.btn-add:focus{
+
+}
+.container-products{
+
+}
+#btn-create{
+
+}
+#btn-create :hover,
+#btn-create :focus{
+
+
+}
+.modal{
+    width: 20rem;
+    height: 15rem;
+    border: groove black 2px;
+    background-color: grey;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    position: absolute;
+    z-index: 1;
+    display: none;
+}
+.modal > input{
+    width: 10rem;
+    height: 1.5rem;
+    border-radius: 15px;
+    background-color: black;
+    color: beige;
+    font-size: 1rem;
+}
+.modal input[type = "file"]{
+    width: 14rem;
+    height: 2rem;
+    border-radius: 5px;
+    color: aliceblue;
+    font-size: 1rem;
+    margin-left: 4rem;
+}
+.modal > button{
+    width: 12rem;
+    height: 2rem;
+    border-radius: 15px;
+    background-color:aqua;
+    color:chartreuse;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.modal > button:hover,
+.modal > button:focus{
+    background-color:blueviolet;
+    font-weight: 900;
+    color: white;
+
+}
+#close-modal{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: green;
+    color: goldenrod;
+    font-size: 1rem;
+    cursor: pointer;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+}

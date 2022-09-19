@@ -1,6 +1,18 @@
 
 const contenedorImagenes = document.getElementById('contenedor-img');
 const selectorArticulos = document.getElementById('selec-art');
+const btnCreate = document.getElementById('btn-create');
+//creamos una variable de la imagen seleccionada
+
+let imgSelected = " ";
+
+//ahora vamos a llamar a c.u de los elementos para trabajar con el modal
+const modal = document.querySelector('.modal');
+const closeModal = document.getElementById('close-modal');
+const newProduct = document.getElementById('new-product');
+const newPrice = document.getElementById('new-price');
+const newImage = document.getElementById('new-image');
+const btnNewProduct = document.getElementById('btn-new-create');
 
 window.addEventListener('load', listSelect);
 //listSelect me mapea todo el array de articulos y para ello creamos una función:
@@ -8,6 +20,24 @@ window.addEventListener('load', listSelect);
 //vamos a crear la funcion de renderizar
 //listSelect se encarga de listar los elementos en windows
 selectorArticulos.addEventListener('change', renderCards);
+
+//creamos los eventos para el boton de crear articulo:
+btnCreate.addEventListener('click',showModal);
+
+//creamos el evento para crear el nuevo producto:
+btnCreate.addEventListener('click', createNewProduct);
+
+//ahora creamos la funcion para crear el nuevo producto:
+function createNewProduct(){
+    //creamos una variable nueva:
+    const titleProduct = newProduct.value; //capturamos lo que va a hacer el titulo del producto
+}
+
+function showModal(){
+    modal.style.display = 'flex'; //recuperamos la info de las clases, nos muestra el recuadro cuando apretamos el boton
+
+}
+
 
 function renderCards(){
     //ejercicio de validacion:
