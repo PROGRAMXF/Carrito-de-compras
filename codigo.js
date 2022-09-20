@@ -2,9 +2,10 @@
 const contenedorImagenes = document.getElementById('contenedor-img');
 const selectorArticulos = document.getElementById('selec-art');
 const btnCreate = document.getElementById('btn-create');
-//creamos una variable de la imagen seleccionada
 
+//creamos una variable de la imagen seleccionada
 let imgSelected = " ";
+let idProduct = 0;
 
 //ahora vamos a llamar a c.u de los elementos para trabajar con el modal
 const modal = document.querySelector('.modal');
@@ -13,6 +14,10 @@ const newProduct = document.getElementById('new-product');
 const newPrice = document.getElementById('new-price');
 const newImage = document.getElementById('new-image');
 const btnNewProduct = document.getElementById('btn-new-create');
+
+
+
+
 
 window.addEventListener('load', listSelect);
 //listSelect me mapea todo el array de articulos y para ello creamos una función:
@@ -25,12 +30,40 @@ selectorArticulos.addEventListener('change', renderCards);
 btnCreate.addEventListener('click',showModal);
 
 //creamos el evento para crear el nuevo producto:
-btnCreate.addEventListener('click', createNewProduct);
+btnNewProduct.addEventListener('click', createNewProduct);
+
+//como creamos la url para las imagenes nuevas, me trae la ruta
+newImage.addEventListener('change', importImg);
+
+closeModal.addEventListener('click',() => modal.style.display = 'none');
+
+//creamos la funcion para importar las imagenes creandolas en un array que yo quiero recorrer:
+function importImg(event){
+    const currentImg = event.target.files[0];
+    
+//para traer el objeto que nos interesa creamos una variable:
+    const objectURL = URL.createObjectURL(currentImg);
+   
+    //imgSelect la voy a usar para guardar la url:
+    imgSelected = objectURL;
+}
 
 //ahora creamos la funcion para crear el nuevo producto:
 function createNewProduct(){
     //creamos una variable nueva:
+    idProduct ++;
     const titleProduct = newProduct.value; //capturamos lo que va a hacer el titulo del producto
+    const priceProduct = newPrice.value;
+    const id = idProduct;
+
+    //vamos a crear el nuevo objeto:
+    const newHerr = {id:id, articulo:titleProduct, precio:priceProduct, imagen:imgSelected}
+
+    //cuando llegue aca, el nuevo articulo se agrega al array de articulos:
+    herramientas.push(newHerr);
+    listSelect();
+    modal.style.display = 'none';
+
 }
 
 function showModal(){
