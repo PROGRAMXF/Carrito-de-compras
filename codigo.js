@@ -1,7 +1,9 @@
+//const { MultiFactorAuthConfig } = require("firebase-admin/lib/auth/auth-config");
 
 const contenedorImagenes = document.getElementById('contenedor-img');
 const selectorArticulos = document.getElementById('selec-art');
 const btnCreate = document.getElementById('btn-create');
+
 
 //creamos una variable de la imagen seleccionada
 let imgSelected = " ";
@@ -14,7 +16,7 @@ const newProduct = document.getElementById('new-product');
 const newPrice = document.getElementById('new-price');
 const newImage = document.getElementById('new-image');
 const btnNewProduct = document.getElementById('btn-new-create');
-
+const filterXPrice = document.getElementById('filterXPrice');
 
 
 
@@ -36,6 +38,28 @@ btnNewProduct.addEventListener('click', createNewProduct);
 newImage.addEventListener('change', importImg);
 
 closeModal.addEventListener('click',() => modal.style.display = 'none');
+
+//creamos ele eventListener para el filtro de precios con su respectiva funcion:
+filterXPrice.addEventListener('change', filterProducts);
+
+function filterProducts(event){
+//creamos una nueva variable con el desarrollo de los filtros por rango de precios:
+const responseFilter = event.target.value === 'Menores a 500' 
+? herramientas.filter(herr => herr.precio < 500)
+: event.target.value === 'Entre 501 y 1200' 
+? herramientas.filter(herr => herr.precio >= 500 && herr.precio <= 1200) 
+: event.target.value === 'Mayores a 1200'
+? herramientas.filter(herr => herr.precio > 1200)
+: null;
+
+//ahora limpiamos el container de imagenes para cuando aplicamos el filtro solo muestre lo que se pide en el filtro:
+contenedorImagenes.innerHTML = '';
+//y ahora el response filter lo vuelve a mapear para mostrar los articulos filtrados:
+responseFilter.map(herr => crearTarjetas(herr));
+
+    
+}
+
 
 //creamos la funcion para importar las imagenes creandolas en un array que yo quiero recorrer:
 function importImg(event){
