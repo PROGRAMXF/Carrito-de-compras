@@ -10,7 +10,7 @@ body{
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: aqua;
+    background-image: url(assets/ferret.jpg);
 }
 header{
 width: 100%;
@@ -19,9 +19,9 @@ display: flex;
 justify-content: center;
 align-items: center;
 font-family: 'Macondo' cursive;
-font-size: 2rem;
-color: darkgreen;
-border-bottom:blue 2px groove;
+font-size: 3rem;/*La unidad rem tiene como referencia de medida el font-size del elemento root, la etiqueta <html>*/
+color: rgb(7, 12, 7);
+border-bottom:rgb(8, 8, 17) 10px groove;
 padding: 0%;
 
 }
@@ -61,8 +61,8 @@ main{
 }
 .nombre-articulo{
     margin-top:0.8rem ;
-    color: blue;
-    font-family: ´'Macondo', cursive;
+    color: black;
+    font-family: 'Macondo', cursive;
     font-size: 1.5rem;
     font-weight: 600;
 }
@@ -70,7 +70,7 @@ main{
     font-family: 'Macondo', cursive;
     font-size: 1.2rem;
     font-weight: 600;
-    color: crimson;
+    color: brown;
 
 }
 .btn-add{
@@ -79,21 +79,34 @@ main{
     border-radius: 5px;
     background-color: green;
     color: white;
-    font-size: 1rem;
+    font-size: 0.8rem;
 }
 .btn-add:hover,
 .btn-add:focus{
-
+    background-color:blue;
+    font-weight: 500;
+    color: white;
+    
 }
 .container-products{
+background-color: rgb(210, 210, 223);
+border-radius: 25px;
+padding-bottom: 20px;
+padding-top: -2px;
 
 }
 #btn-create{
-
+    color: #f0f8ff;
+    font:  18px arial;
+    background: #000000;
+    border-radius: 10px;
+    margin: 10px 0px 0px;
 }
 #btn-create :hover,
 #btn-create :focus{
-
+    background-color:blueviolet;
+    font-weight: 900;
+    color: white;
 
 }
 .modal{
@@ -114,7 +127,7 @@ main{
     height: 1.5rem;
     border-radius: 15px;
     background-color: black;
-    color: beige;
+    color: white;
     font-size: 1rem;
 }
 .modal input[type = "file"]{
@@ -129,14 +142,14 @@ main{
     width: 12rem;
     height: 2rem;
     border-radius: 15px;
-    background-color:aqua;
-    color:chartreuse;
+    background-color:white;
+    color:black;
     font-size: 1rem;
     cursor: pointer;
 }
 .modal > button:hover,
 .modal > button:focus{
-    background-color:blueviolet;
+    background-color:blue;
     font-weight: 900;
     color: white;
 
@@ -145,8 +158,8 @@ main{
     width: 2rem;
     height: 2rem;
     border-radius: 50%;
-    background-color: green;
-    color: goldenrod;
+    background-color: black;
+    color: white;
     font-size: 1rem;
     cursor: pointer;
     position: absolute;
