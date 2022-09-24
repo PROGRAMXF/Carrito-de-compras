@@ -1,6 +1,6 @@
 const herramientas = [
 
-    {id:"herr-01", articulo:"Pinza", precio:350, imagen:'../assets/Pinza.png'},
+    {id:"herr-01", articulo:"Pinza", precio:350, imagen:'./assets/Pinza.png'},
     {id:"herr-02", articulo:"Alicate", precio:370, imagen:'../assets/Alicate.jpg'},
     {id:"herr-03", articulo:"Pico de loro", precio:650, imagen:'../assets/PicoDeLoro.png'}, 
     {id:"herr-04", articulo:"Destornillador", precio:230, imagen:'../assets/Destornillador.png'},
